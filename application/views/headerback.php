@@ -20,6 +20,8 @@
 	<div class="jumbotron text-center mainColor" id="">
   		<h1>Administración de películas</h1>
   		<h2>Filmoteca</h2> 
-	</div>
-	
-	<div clasS="col-md-8 offset-2">
+    </div>
+    <div class="container-fluid">
+	<div class="row">
+        <div class="col-md-1"></div>
+	    <div class="col-md-10 cols-sm-10 col-10 ">

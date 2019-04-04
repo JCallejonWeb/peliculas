@@ -9,7 +9,7 @@
 
         public function homeFilms(){
             if ($this->security_check()){
-                $this->load->model("peliculasModel");
+                
                 $data["pelList"] = $this->peliculasModel->getAll();
                 $data["nombreVista"]="mainMenu";
                 $this->load->view("plantillaBack",$data);

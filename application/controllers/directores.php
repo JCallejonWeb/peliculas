@@ -10,7 +10,6 @@
         
         public function homeDirectors(){
             if ($this->security_check()){
-                $this->load->model("directoresModel");
                 $data["dirList"] = $this->directoresModel->getAll();
                 $data["nombreVista"]="dirMenu";
                 $this->load->view("plantillaBack",$data);
@@ -54,7 +53,7 @@
                     $nombre = $this->input->post('nombre');
                     
                     $this->load->model("directoresModel");
-                    $resultado = $this->directoresModel->modificarDirector($id, $nombre, $anyo, $sinopsis);
+                    $resultado = $this->directoresModel->modificarDirector($id, $nombre);
                     if ($resultado) {
                         redirect('directores/homeDirector','refresh');
                     } else {

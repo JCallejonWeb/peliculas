@@ -46,7 +46,7 @@
         });
 
         $("#menuGeneros").click(function(){
-            location.href='<?php echo base_url("index.php/directorgeneroses/homeGenders"); ?>'
+            location.href='<?php echo base_url("index.php/generos/homeGenders"); ?>'
         });
 
   
@@ -56,8 +56,8 @@
     echo "<div class='row'>
         <div class='col-md-8 offset-4' id='navegacionMenu'>
             <button id='menuPeliculas' class='btn btn-secondary'>Peliculas</button>
-            <button class='btn btn-info botonesNavegacion'>Directores</button>
-            <button class='btn btn-secondary botonesNavegacion'>Generos</button>
+            <button id='menuDirectores' class='btn btn-info botonesNavegacion'>Directores</button>
+            <button id='menuGeneros' class='btn btn-secondary botonesNavegacion'>Generos</button>
         </div>
     </div>";
     echo "<div class='botonesPrincipales'>
