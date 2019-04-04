@@ -6,17 +6,14 @@
             parent::__construct();
             $this->load->model("peliculasModel");
         }
-        public function vistaFormInsert(){
+
+        public function homeFilms(){
             if ($this->security_check()){
-                $this->load->view("formInsert");
+                $this->load->model("peliculasModel");
+                $data["pelList"] = $this->peliculasModel->getAll();
+                $data["nombreVista"]="mainMenu";
+                $this->load->view("plantillaBack",$data);
             }
-        }
-        
-        public function redireccion(){
-            $this->load->model("peliculasModel");
-            $data["pelList"] = $this->peliculasModel->getAll();
-            $data["nombreVista"]="mainMenu";
-            $this->load->view("plantillaBack",$data);
         }
         public function insertPelicula(){
             if ($this->security_check()){
@@ -39,23 +36,23 @@
                     $data["mensaje"] = "Error al subir la imagen de la película";
                 }
 
-                redirect('peliculas/redireccion','refresh');
+                redirect('peliculas/homeFilms','refresh');
  
             }
         } 
 
         public function eliminarPelicula($id){
             if ($this->security_check()){
-                $this->load->model("peliculasModel");
+                
                 $resultado = $this->peliculasModel->eliminarPelicula($id);
     
                 if ($resultado) {
 
-                    redirect('peliculas/redireccion','refresh');
+                    redirect('peliculas/homeFilms','refresh');
 
                 } else {
                     echo "No se pudo eliminar la pelicula.";
-                    redirect('peliculas/redireccion','refresh');
+                    redirect('peliculas/homeFilms','refresh');
 
                 }
     
@@ -70,9 +67,9 @@
                     $this->load->model("peliculasModel");
                     $resultado = $this->peliculasModel->modificarPelicula($id, $nombre, $anyo, $sinopsis);
                     if ($resultado) {
-                        redirect('peliculas/redireccion','refresh');
+                        redirect('peliculas/homeFilms','refresh');
                     } else {
-                        redirect('peliculas/redireccion','refresh');
+                        redirect('peliculas/homeFilms','refresh');
                     }
                 }
             }
