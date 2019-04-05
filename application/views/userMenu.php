@@ -24,8 +24,8 @@
 
             var id = $(this).attr("value");
             var usuario = $("." + id + " input[name='usuario']").val();
-            var contrasenya = $("." + id + "input[name='contrasenya']").val();
-            
+            var contrasenya = $("#" + id + "-contra").val();
+
             var datos = "id=" + id + "&usuario=" + usuario +"&contrasenya=" + contrasenya;
             var cadena = "<?php echo site_url("usuarios/modificarUsuario/"); ?>";
 
@@ -92,7 +92,7 @@
                 <tr class='$user->id'>
                     <input type='hidden' name='id' value='$user->id'/>
                     <td><input type='text' name='usuario' value='$user->usuario'/><p hidden>'$user->usuario'</p></td>
-                    <td><input type='text' name='contrasenya' value='$user->contrasenya'/><p hidden>'$user->usuario'</p></td>
+                    <td><input type='text' id='$user->id-contra' name='contrasenya' value='$user->contrasenya'/><p hidden>'$user->contrasenya'</p></td>
                     <td><button  class='btn btn-primary modificarusuario' value='$user->id' >Modificar</button></td>
                     <td><button class='btn btn-danger eliminarusuario' value='$user->id'>Eliminar</td>  
                 </tr>

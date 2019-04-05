@@ -58,7 +58,7 @@
     });
 </script>
 <?php
-    echo "<div class='row'>
+    echo "<div class='row container-fluid'>
         <div class='col-md-8 offset-4' id='navegacionMenu'>
             <button id='menuPeliculas' class='btn btn-info'>Peliculas</button>
             <button id='menuDirectores' class='btn btn-secondary botonesNavegacion'>Directores</button>
@@ -81,6 +81,8 @@
             <th>Nombre</th>
             <th>Año</th>
             <th>Sinopsis</th>
+            <th>Director</th>
+            <th>Género</th>
             <th>Cartel</th>
             <th>Modificar</th>
             <th>Eliminar</th>
@@ -96,6 +98,38 @@
                     <td><input type='text' name='nombre' value='$pel->nombre'/><p hidden>'$pel->nombre'</p></td>
                     <td><input type='text' name='anyo' value='$pel->anyo'/><p hidden>'$pel->anyo'</p></td>
                     <td><input type='text' name='sinopsis' value='$pel->sinopsis'/><p hidden>'$pel->sinopsis'</p></td>
+                    <td><select  multiple >";
+                        for ($j = $cont=0; $j < count($directores); $j++) {
+                            $dir = $directores[$j];
+                            for ($k = 0; $k < count($listaAutoresLibros); $k++) {
+                                $autorlibro = $listaAutoresLibros[$k];
+                                if(($autorlibro->idAutor==$autor->id)&&($autorlibro->idLibro==$libro->id)){
+                                    echo "<option  value='$autor->id' selected >$autor->nombre</option> "; 
+                                    $k=count($listaAutoresLibros); 
+                                }else if ($k==count($listaAutoresLibros)-1)  {
+                                    echo "<option  value='$autor->id'  disabled >$autor->nombre</option> ";
+                                    $k=count($listaAutoresLibros);
+                                }
+                            }
+                        }
+                  
+                   echo   "</select></td>
+                    <td><select  multiple >";
+                        for ($j = $cont=0; $j < count($directores); $j++) {
+                            $dir = $dirList[$j];
+                            for ($k = 0; $k < count($listaAutoresLibros); $k++) {
+                                $autorlibro = $listaAutoresLibros[$k];
+                                if(($autorlibro->idAutor==$autor->id)&&($autorlibro->idLibro==$libro->id)){
+                                    echo "<option  value='$autor->id' selected >$autor->nombre</option> "; 
+                                    $k=count($listaAutoresLibros); 
+                                }else if ($k==count($listaAutoresLibros)-1)  {
+                                    echo "<option  value='$autor->id'  disabled >$autor->nombre</option> ";
+                                    $k=count($listaAutoresLibros);
+                                }
+                            }
+                        }
+                  
+                   echo   "</select></td>
                     <td>"; echo "<img id='$pel->id-img' class='cartelPelicula' src='".base_url($pel->cartel)."' width='100px'>";echo "</td>
                     <td> <button  class='btn btn-primary modificarpelicula' value='$pel->id' >Modificar</button></td>
                     <td> <button class='btn btn-danger eliminarpelicula' value='$pel->id'>Eliminar</td>  
