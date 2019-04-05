@@ -49,6 +49,11 @@
         $("#menuGeneros").click(function(){
             location.href='<?php echo base_url("index.php/generos/homeGenders"); ?>'
         });
+
+        $("#menuUsuarios").click(function(){
+            location.href='<?php echo base_url("index.php/usuarios/homeUsers"); ?>'
+        });
+            
             
     });
 </script>
@@ -58,6 +63,7 @@
             <button id='menuPeliculas' class='btn btn-info'>Peliculas</button>
             <button id='menuDirectores' class='btn btn-secondary botonesNavegacion'>Directores</button>
             <button id='menuGeneros' class='btn btn-secondary botonesNavegacion'>Generos</button>
+            <button id='menuUsuarios' class='btn btn-secondary botonesNavegacion'>Usuarios</button>
         </div>
     </div>";
     echo "<div class='botonesPrincipales'>
@@ -97,6 +103,7 @@
                
                 ";
                
+
     }
         
         echo " </table>
