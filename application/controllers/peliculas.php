@@ -5,33 +5,52 @@
         public function __construct() {
             parent::__construct();
             $this->load->model("peliculasModel");
+            $this->load->model("directoresModel");
+            $this->load->model("generosModel");
         }
 
         public function homeFilms(){
             if ($this->security_check()){
                 
                 $data["pelList"] = $this->peliculasModel->getAll();
+                $data["dirList"] = $this->directoresModel->getAll();
+                $data["genList"] = $this->generosModel->getAll();
+                
+                $data["listaPeliculasDirectores"] = $this->peliculasModel->getPeliculasDirectores();
+                $data["listaPeliculasGeneros"] = $this->peliculasModel->getPeliculasGeneros();
+
                 $data["nombreVista"]="mainMenu";
                 $this->load->view("plantillaBack",$data);
             }
         }
         public function insertPelicula(){
             if ($this->security_check()){
+               
                 $nombre = $this->input->get_post("nombre");
                 $anyo = $this->input->get_post("anyo");
                 $sinopsis = $this->input->get_post("sinopsis");
+                $sinopsis = $this->input->post('sinopsis');
+                $idGenero = $this->input->post('idGenero');
+                $idDirector = $this->input->post('idDirector');
+
                 $resultado_subida = $this->peliculasModel->uploadImg();
                 if ($resultado_subida["codigo"] == 1){
                     $img_name=$resultado_subida["mensaje"];
-                    var_dump($img_name);
+
                     $cartel = "./imgs/films/".$img_name;
+
                     $resultado = $this->peliculasModel->insertPelicula($nombre,$anyo,$sinopsis,$cartel);
-                    if ($resultado == 0){
-                        $data["mensaje"] = "Error al insertar la película en la base de datos";
-                    } else{
-                        $data["mensaje"] = "Película insertada con éxito";
+                    $id=$this->peliculasModel->getMax();
+                    for ($i = $cont=0; $i < count($idDirector); $i++) {
+                        $dir = $idDirector[$i];
+                        $r=$this->peliculasModel->insertarPeliculaDirector($id,$dir);
                     }
-            
+
+                    for ($i = $cont=0; $i < count($idGenero); $i++) {
+                        $gen = $idGenero[$i];
+                        $r=$this->peliculasModel->InsertarPeliculaGenero($id,$gen);
+                    }
+      
                 } else {
                     $data["mensaje"] = "Error al subir la imagen de la película";
                 }
@@ -64,8 +83,25 @@
                     $nombre = $this->input->post('nombre');
                     $anyo = $this->input->post('anyo');
                     $sinopsis = $this->input->post('sinopsis');
-                    $this->load->model("peliculasModel");
+                    $idGenero = $this->input->post('idGenero');
+                    $idDirector = $this->input->post('idDirector');
+
                     $resultado = $this->peliculasModel->modificarPelicula($id, $nombre, $anyo, $sinopsis);
+
+                    $r1=$this->peliculasModel->eliminarPeliculaDirector($id);
+                    $r2=$this->peliculasModel->eliminarPeliculaGenero($id);
+                    //Guarda el array de directores y los inserta en la tabla peliculasdirectores
+                    for ($i = $cont=0; $i < count($idDirector); $i++) {
+                        $dir = $idDirector[$i];
+                        $r=$this->peliculasModel->insertarPeliculaDirector($id,$dir);
+                    }
+        
+                    //Guarda el array de generos y los inserta en la tabla peliculasgeneros
+                    for ($i = $cont=0; $i < count($idGenero); $i++) {
+                        $gen = $idGenero[$i];
+                        $r=$this->peliculasModel->insertarPeliculaGenero($id,$gen);
+                    }  
+
                     if ($resultado) {
                         redirect('peliculas/homeFilms','refresh');
                     } else {

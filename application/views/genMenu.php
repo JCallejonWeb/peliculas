@@ -2,7 +2,7 @@
     $(document).ready( function () {
         $('#tabla').DataTable();
 
-        $(".eliminargenero").click(function() {
+        $(document).on('click','.eliminargenero',function(e) {
             var r = confirm("Vas a eliminar un registro!\n¿Estás seguro?");
 
             if (r == false) {
@@ -20,7 +20,7 @@
             }
         });
 
-        $(".modificargenero").click(function(){
+        $(document).on('click','.modificargenero',function(e) {
 
             var id = $(this).attr("value");
             var nombre = $("." + id + " input[name='nombre']").val();

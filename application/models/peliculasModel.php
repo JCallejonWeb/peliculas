@@ -41,5 +41,49 @@
                 $resultado["mensaje"] = $this->upload->data("file_name");
             }
                 return $resultado;
+        }
+
+        public function getPeliculasDirectores() {
+            $r = $this->db->query("SELECT * FROM peliculasdirectores");
+            $peliculasdirectores=array();
+            foreach($r->result()as $pelDir){
+                $peliculasdirectores[]=$pelDir;
             }
+            return $peliculasdirectores;     
+        }
+
+        public function getPeliculasGeneros() {
+            $r = $this->db->query("SELECT * FROM peliculasgeneros");
+            $peliculasgeneros=array();
+            foreach($r->result()as $pelGen){
+                $peliculasgeneros[]=$pelGen;
+            }
+            return $peliculasgeneros;     
+        }
+
+        public function eliminarPeliculaDirector($idPelicula){
+            $this->db->query("DELETE from peliculasdirectores where idPelicula=$idPelicula");
+            return $this->db->affected_rows();
+        }
+
+        public function eliminarPeliculaGenero($idPelicula){
+            $this->db->query("DELETE from peliculasgeneros where idPelicula=$idPelicula");
+            return $this->db->affected_rows();
+        }
+
+        public function insertarPeliculaDirector($idPelicula, $idDirector){
+            $r = $this->db->query("INSERT INTO peliculasdirectores(idPelicula,idDirector) VALUES ('$idPelicula','$idDirector')");                  
+            return $r;
+        }
+
+        public function insertarPeliculaGenero($idPelicula, $idGenero){
+            $r = $this->db->query("INSERT INTO peliculasgeneros(idPelicula, idGenero) VALUES ('$idPelicula', '$idGenero')");
+            return $r;
+        }
+
+        public function getMax(){
+            $r = $this->db->query("SELECT MAX(id)as id FROM peliculas ");
+            $a= $r->result_array();
+            return $a[0]['id'];
+        }
     }

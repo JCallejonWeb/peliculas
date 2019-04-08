@@ -27,8 +27,38 @@ echo "
                         <input type='text' class='form-control bordeInputs' name='sinopsis' id='sinopsis'  placeholder='Sinopsis'>
                     </div>
                     <div class='form-group'>
+                        <label for='director'>Director</label>
+                        <select multiple name='idDirector[]' id=''>";
+                        
+                        for ($j = 0; $j < count($dirList); $j++) {
+                            $dir = $dirList[$j];
+                            if($j==0){
+                                echo "<option  value='$dir->id' selected >$dir->nombre</option> ";                      
+                            }else{
+                                echo "<option  value='$dir->id'>$dir->nombre</option> ";                  
+                            }
+                        }
+                    
+                    echo "</select>
+                    </div>
+                    <div class='form-group'>
+                        <label for='director'>Genero</label>
+                        <select multiple name='idGenero[]' id=''>";
+                        
+                        for ($j = 0; $j < count($genList); $j++) {
+                            $gen = $genList[$j];
+                            if($j==0){
+                                echo "<option  value='$gen->id' selected >$gen->nombre</option> ";                      
+                            }else{
+                                echo "<option  value='$gen->id'>$gen->nombre</option> ";                  
+                            }
+                        }
+                    
+                    echo "</select>
+                    </div>
+                    <div class='form-group'>
                         <label for='Cartel'>Cartel</label>
-                        <input type='file' class='form-control bordeInputs' name='cartel' id='cartel'  placeholder='Cartel'>
+                        <input required type='file' class='form-control bordeInputs' name='cartel' id='cartel'  placeholder='Cartel'>
                     </div>
                         
                     ";  

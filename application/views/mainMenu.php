@@ -2,7 +2,7 @@
     $(document).ready( function () {
         $('#tabla').DataTable();
 
-        $(".eliminarpelicula").click(function() {
+        $(document).on('click','.eliminarpelicula',function(e) {
             var r = confirm("Vas a eliminar un registro!\n¿Estás seguro?");
 
             if (r == false) {
@@ -20,19 +20,31 @@
             }
         });
 
-        $(".modificarpelicula").click(function(){
+        $(document).on('click','.modificarpelicula',function(e) {
 
             var id = $(this).attr("value");
             var nombre = $("." + id + " input[name='nombre']").val();
             var anyo = $("." + id + " input[name='anyo']").val();
             var sinopsis = $("." + id + " input[name='sinopsis']").val();
-            var datos = "id=" + id + "&nombre=" + nombre +"&anyo=" + anyo +"&sinopsis=" + sinopsis;
+            var idDirector = $("#" + id + "-pelDir").val();
+            var idGenero = $("#" + id + "-pelGen").val();
+
+
+            var datosJson = {
+                'id': id,
+                'nombre': nombre,
+                'anyo': anyo,
+                'sinopsis': sinopsis,
+                'idGenero': idGenero,
+                'idDirector': idDirector
+            };
+
             var cadena = "<?php echo site_url("peliculas/modificarPelicula/"); ?>";
 
             $.ajax({
                 type: "POST",
                 url: cadena,
-                data: datos,
+                data: datosJson,
                 error: function () { alert("error al modificar!!") }
             }).done(function () { alert("Modificación efectuada con exito!!"); });
 
@@ -98,33 +110,41 @@
                     <td><input type='text' name='nombre' value='$pel->nombre'/><p hidden>'$pel->nombre'</p></td>
                     <td><input type='text' name='anyo' value='$pel->anyo'/><p hidden>'$pel->anyo'</p></td>
                     <td><input type='text' name='sinopsis' value='$pel->sinopsis'/><p hidden>'$pel->sinopsis'</p></td>
-                    <td><select  multiple >";
-                        for ($j = $cont=0; $j < count($directores); $j++) {
-                            $dir = $directores[$j];
-                            for ($k = 0; $k < count($listaAutoresLibros); $k++) {
-                                $autorlibro = $listaAutoresLibros[$k];
-                                if(($autorlibro->idAutor==$autor->id)&&($autorlibro->idLibro==$libro->id)){
-                                    echo "<option  value='$autor->id' selected >$autor->nombre</option> "; 
-                                    $k=count($listaAutoresLibros); 
-                                }else if ($k==count($listaAutoresLibros)-1)  {
-                                    echo "<option  value='$autor->id'  disabled >$autor->nombre</option> ";
-                                    $k=count($listaAutoresLibros);
+                    <td><select id='$pel->id-pelDir'  multiple >";
+                    
+                        for ($j = $cont=0; $j < count($dirList); $j++) {
+                            
+                            $dir = $dirList[$j];
+                            
+                            for ($k = 0; $k < count($listaPeliculasDirectores); $k++) {
+                                $pelDir = $listaPeliculasDirectores[$k];
+                                
+                                if(($pelDir->idDirector==$dir->id)&&($pelDir->idPelicula==$pel->id)){
+                                    echo "<option  value='$dir->id' selected >$dir->nombre</option> "; 
+                                    $k=count($listaPeliculasDirectores); 
+                                }else if ($k==count($listaPeliculasDirectores)-1)  {
+                                    echo "<option  value='$dir->id'   >$dir->nombre</option> ";
+                                    $k=count($listaPeliculasDirectores);
                                 }
                             }
                         }
                   
                    echo   "</select></td>
-                    <td><select  multiple >";
-                        for ($j = $cont=0; $j < count($directores); $j++) {
-                            $dir = $dirList[$j];
-                            for ($k = 0; $k < count($listaAutoresLibros); $k++) {
-                                $autorlibro = $listaAutoresLibros[$k];
-                                if(($autorlibro->idAutor==$autor->id)&&($autorlibro->idLibro==$libro->id)){
-                                    echo "<option  value='$autor->id' selected >$autor->nombre</option> "; 
-                                    $k=count($listaAutoresLibros); 
-                                }else if ($k==count($listaAutoresLibros)-1)  {
-                                    echo "<option  value='$autor->id'  disabled >$autor->nombre</option> ";
-                                    $k=count($listaAutoresLibros);
+                    <td><select id='$pel->id-pelGen'  multiple >";
+
+                        for ($j = $cont=0; $j < count($genList); $j++) {
+                            
+                            $gen = $genList[$j];
+                        
+                            for ($k = 0; $k < count($listaPeliculasGeneros); $k++) {
+                                $pelGen = $listaPeliculasGeneros[$k];
+                            
+                                if(($pelGen->idGenero==$gen->id)&&($pelGen->idPelicula==$pel->id)){
+                                    echo "<option  value='$gen->id' selected >$gen->nombre</option> "; 
+                                    $k=count($listaPeliculasGeneros); 
+                                }else if ($k==count($listaPeliculasGeneros)-1)  {
+                                    echo "<option  value='$gen->id'   >$gen->nombre</option> ";
+                                    $k=count($listaPeliculasGeneros);
                                 }
                             }
                         }

@@ -2,7 +2,7 @@
     $(document).ready( function () {
         $('#tabla').DataTable();
 
-        $(".eliminardirector").click(function() {
+        $(document).on('click','.eliminardirector',function(e) {
             var r = confirm("Vas a eliminar un registro!\n¿Estás seguro?");
 
             if (r == false) {

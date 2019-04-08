@@ -3,6 +3,9 @@
 class Login extends Seguridad {
     public function __construct(){
         parent::__construct();
+        $this->load->model("peliculasModel");
+        $this->load->model("directoresModel");
+        $this->load->model("generosModel");
     }
     public function index(){
         $this->load->view("formLoginAj");
@@ -22,10 +25,17 @@ class Login extends Seguridad {
     }
     public function main(){
         if($this->security_check()){
-            $this->load->model("peliculasModel");
+
             $data["pelList"] = $this->peliculasModel->getAll();
+            $data["dirList"] = $this->directoresModel->getAll();
+            $data["genList"] = $this->generosModel->getAll();
+            
+            $data["listaPeliculasDirectores"] = $this->peliculasModel->getPeliculasDirectores();
+            $data["listaPeliculasGeneros"] = $this->peliculasModel->getPeliculasGeneros();
+
             $data["nombreVista"]="mainMenu";
             $this->load->view("plantillaBack",$data);
+
         }    
     }
     public function comprobarUsuario() {

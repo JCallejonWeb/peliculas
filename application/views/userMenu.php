@@ -2,7 +2,7 @@
     $(document).ready( function () {
         $('#tabla').DataTable();
 
-        $(".eliminarusuario").click(function() {
+        $(document).on('click','.eliminarusuario',function(e) {
             var r = confirm("Vas a eliminar un registro!\n¿Estás seguro?");
 
             if (r == false) {
@@ -20,19 +20,26 @@
             }
         });
 
-        $(".modificarusuario").click(function(){
+        $(document).on('click','.modificarusuario',function(e) {
 
             var id = $(this).attr("value");
             var usuario = $("." + id + " input[name='usuario']").val();
             var contrasenya = $("#" + id + "-contra").val();
 
-            var datos = "id=" + id + "&usuario=" + usuario +"&contrasenya=" + contrasenya;
+
+            var datosJson = {
+                'id': id,
+                'usuario': usuario,
+                'contrasenya': contrasenya
+            };
+
+            
             var cadena = "<?php echo site_url("usuarios/modificarUsuario/"); ?>";
 
             $.ajax({
                 type: "POST",
                 url: cadena,
-                data: datos,
+                data: datosJson,
                 error: function () { alert("error al modificar!!") }
             }).done(function () { alert("Modificación efectuada con exito!!"); });
 
