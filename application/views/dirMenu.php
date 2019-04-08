@@ -66,7 +66,7 @@
         </div>
     </div>";
     echo "<div class='botonesPrincipales'>
-        <button type='button' class='btn btn-success' data-toggle='modal' data-target='#insertModal'>
+        <button id='botonInsert' type='button' class='btn btn-success' data-toggle='modal' data-target='#insertModal'>
             Insertar un director
         </button>";
     echo "

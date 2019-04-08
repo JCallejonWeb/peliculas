@@ -1,8 +1,6 @@
 <script>
     $(document).ready( function () {
-        $('#tabla').DataTable({
-            "paging": false
-        });
+
 
         $(document).on('click','.eliminarpelicula',function(e) {
             var r = confirm("Vas a eliminar un registro!\n¿Estás seguro?");
@@ -52,7 +50,7 @@
 
         });
 
-    
+         
         $("#menuPeliculas").click(function(){
             location.href='<?php echo base_url("index.php/peliculas/homeFilms"); ?>'
         });
@@ -67,8 +65,7 @@
 
         $("#menuUsuarios").click(function(){
             location.href='<?php echo base_url("index.php/usuarios/homeUsers"); ?>'
-        });
-            
+        });   
             
     });
 </script>
