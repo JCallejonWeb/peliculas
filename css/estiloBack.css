@@ -14,11 +14,19 @@
     border-color: rgba(228, 12, 12, 0.815) !important;
 }
 .botonesPrincipales{
-    margin-bottom: 2%;
+    margin-bottom: 5%;
+ 
+    
 }
-#cerrarSesion{
+#cerrarsesion{
+    margin-right: 10% !important;
+    float: right !important;
     color:white !important;
     text-decoration: none !important;
+}
+#botonInsert{
+    margin-left: 10% !important;
+    float: left;
 }
 #navegacionMenu{
     margin-bottom: 5%;
@@ -28,10 +36,8 @@
     margin-left:7%;
 }
 #cerrarsesion > a{
-    
-color:white;
-text-decoration: none;
-
+    color:white;
+    text-decoration: none;
 }
 
 #piePagina{
@@ -40,6 +46,7 @@ text-decoration: none;
 }
 
 #textoPie > a{
- Color:white;
- text-decoration: none;
+    Color:white;
+    text-decoration: none;
 }
+

@@ -67,9 +67,9 @@
 <?php
     echo "<div class='row'>
         <div class='col-md-8 offset-4' id='navegacionMenu'>
-            <button id='menuPeliculas' class='btn btn-secondary'>Peliculas</button>
+            <button id='menuPeliculas' class='btn btn-secondary'>Películas</button>
             <button id='menuDirectores' class='btn btn-secondary botonesNavegacion'>Directores</button>
-            <button id='menuGeneros' class='btn btn-secondary botonesNavegacion'>Generos</button>
+            <button id='menuGeneros' class='btn btn-secondary botonesNavegacion'>Géneros</button>
             <button id='menuUsuarios' class='btn btn-info botonesNavegacion'>Usuarios</button>
         </div>
     </div>";

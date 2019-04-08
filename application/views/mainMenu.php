@@ -1,6 +1,8 @@
 <script>
     $(document).ready( function () {
-        $('#tabla').DataTable();
+        $('#tabla').DataTable({
+            "paging": false
+        });
 
         $(document).on('click','.eliminarpelicula',function(e) {
             var r = confirm("Vas a eliminar un registro!\n¿Estás seguro?");
@@ -50,6 +52,7 @@
 
         });
 
+    
         $("#menuPeliculas").click(function(){
             location.href='<?php echo base_url("index.php/peliculas/homeFilms"); ?>'
         });
@@ -69,23 +72,27 @@
             
     });
 </script>
+
 <?php
     echo "<div class='row container-fluid'>
-        <div class='col-md-8 offset-4' id='navegacionMenu'>
-            <button id='menuPeliculas' class='btn btn-info'>Peliculas</button>
+        <div class='col-md-5 offset-4 col-sm-12' id='navegacionMenu'>
+            <button id='menuPeliculas' class='btn btn-info'>Películas</button>
             <button id='menuDirectores' class='btn btn-secondary botonesNavegacion'>Directores</button>
-            <button id='menuGeneros' class='btn btn-secondary botonesNavegacion'>Generos</button>
+            <button id='menuGeneros' class='btn btn-secondary botonesNavegacion'>Géneros</button>
             <button id='menuUsuarios' class='btn btn-secondary botonesNavegacion'>Usuarios</button>
         </div>
     </div>";
     echo "<div class='botonesPrincipales'>
-        <button type='button' class='btn btn-success' data-toggle='modal' data-target='#insertModal'>
+    
+        <button id='botonInsert' type='button' class='btn btn-success' data-toggle='modal' data-target='#insertModal'>
             Insertar una película
-        </button>";
+        </button>
+    ";
     echo "
         <button type='button' class='btn btn-danger' id='cerrarsesion'>";
-    echo anchor("login/cerrar_session","Cerrar sesion");
+            echo anchor("login/cerrar_session","Cerrar sesion");
     echo"</button>
+   
         </div>
     <table id='tabla' class='display'>
     <thead>
@@ -110,7 +117,7 @@
                     <td><input type='text' name='nombre' value='$pel->nombre'/><p hidden>'$pel->nombre'</p></td>
                     <td><input type='text' name='anyo' value='$pel->anyo'/><p hidden>'$pel->anyo'</p></td>
                     <td><input type='text' name='sinopsis' value='$pel->sinopsis'/><p hidden>'$pel->sinopsis'</p></td>
-                    <td><select id='$pel->id-pelDir'  multiple >";
+                    <td><select class='selectpicker'  data-live-search='true' id='$pel->id-pelDir'  multiple >";
                     
                         for ($j = $cont=0; $j < count($dirList); $j++) {
                             
@@ -130,7 +137,7 @@
                         }
                   
                    echo   "</select></td>
-                    <td><select id='$pel->id-pelGen'  multiple >";
+                    <td><select class='selectpicker'  data-live-search='true' id='$pel->id-pelGen'  multiple >";
 
                         for ($j = $cont=0; $j < count($genList); $j++) {
                             

@@ -28,30 +28,28 @@ echo "
                     </div>
                     <div class='form-group'>
                         <label for='director'>Director</label>
-                        <select multiple name='idDirector[]' id=''>";
+                        <br>
+                        <select class='selectpicker' data-style='btn-info'  data-live-search='true' multiple name='idDirector[]' id='director'>";
                         
                         for ($j = 0; $j < count($dirList); $j++) {
                             $dir = $dirList[$j];
-                            if($j==0){
-                                echo "<option  value='$dir->id' selected >$dir->nombre</option> ";                      
-                            }else{
-                                echo "<option  value='$dir->id'>$dir->nombre</option> ";                  
-                            }
+
+                                echo "<option  value='$dir->id'>$dir->nombre</option> ";          
+
                         }
                     
                     echo "</select>
                     </div>
                     <div class='form-group'>
-                        <label for='director'>Genero</label>
-                        <select multiple name='idGenero[]' id=''>";
+                        <label for='genero'>Género</label>
+                        <br>
+                        <select class='selectpicker' data-style='btn-info'  data-live-search='true' multiple name='idGenero[]' id='genero'>";
                         
                         for ($j = 0; $j < count($genList); $j++) {
                             $gen = $genList[$j];
-                            if($j==0){
-                                echo "<option  value='$gen->id' selected >$gen->nombre</option> ";                      
-                            }else{
+                           
                                 echo "<option  value='$gen->id'>$gen->nombre</option> ";                  
-                            }
+                            
                         }
                     
                     echo "</select>
