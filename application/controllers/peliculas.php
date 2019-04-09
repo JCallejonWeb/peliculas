@@ -9,6 +9,11 @@
             $this->load->model("generosModel");
         }
 
+        public function index(){
+            $data["nombreVista"]="frontPage";
+            $this->load->view("plantillaFront",$data);
+        }
+
         public function homeFilms(){
             if ($this->security_check()){
                 

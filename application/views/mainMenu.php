@@ -91,7 +91,7 @@
     echo"</button>
    
         </div>
-    <table id='tabla' class='display'>
+    <table id='tabla' class='table display'>
     <thead>
         <tr>
             <th>Nombre</th>

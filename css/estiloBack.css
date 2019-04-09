@@ -50,3 +50,8 @@
     text-decoration: none;
 }
 
+@media (max-width:1300px) {
+    body{
+        zoom: 80%;
+      }
+ }

@@ -1,0 +1,35 @@
+#fotoCabecera{
+    width:100% !important;
+    height:10% !important;
+    margin-bottom: 5%;
+}
+#contenido{
+    margin-bottom: 5%;
+}
+#barraNav{
+    background: #035FA2 !important;
+}
+#buscador {
+    width: 58%;
+    height: 50px;
+    position: absolute;
+    top: 40%;
+    left:25%;
+    margin-top: -75px;
+    margin-left: -75px;
+ }
+ #buscador2 {
+    width: 100%;
+
+ }  
+ @media (max-width:1000px) {
+    #buscador{
+        display: none;
+    }
+ }
+
+ @media (min-width:1000px) {
+    #buscador2{
+        display: none;
+    }  
+ }
