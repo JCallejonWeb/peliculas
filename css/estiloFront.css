@@ -28,16 +28,11 @@
     }
  }
 @media (max-width: 1423px){
-    body{
+    html{
         zoom: 80%;
-        max-zoom: 400% !important;
       }
 }
 
-body{
-
-    max-zoom: 400% !important;
-  }
 
  @media (min-width:1000px) {
     #buscador2{
@@ -46,9 +41,14 @@ body{
  }
  .tamañoTarjeta{
     width: 300px;
-    height:500px;
+    height:575px;
     margin: 0 auto !important;
     margin-bottom: 15% !important;
+ }
+ .tamañoImagen{
+     width: 100% !important;
+     height: 450px !important;
+
  }
  #tituloBusqueda{
     text-transform: capitalize;
@@ -57,4 +57,18 @@ body{
  }
  #tituloBusqueda::first-letter{
      Color:rgb(67, 67, 219);
+ }
+ #noResult{
+     font-size: 3em !important;
+ }
+ .popSinopsis{
+     background: #035FA2 !important;
+     color: white !important;
+ }
+ body{
+    background: rgb(3,95,162);
+    background: linear-gradient(344deg, rgba(3,95,162)15%, rgba(255,255,255,1) 51%, rgba(255,255,255,0.8323704481792717) 99%);
+ }
+ footer {
+    background: rgb(3, 96, 162) !important;
  }

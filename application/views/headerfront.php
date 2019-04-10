@@ -8,14 +8,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
     <link rel="stylesheet" href="http://localhost/peliculas/css/mdb.min.css">
 
+
     <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>js/frontJs.js"></script>
     <title>front</title>
 </head>
 <body>
     <nav id="barraNav" class="navbar navbar-expand-md bg-dark navbar-dark">
 
-        <a class="navbar-brand" href="#">Filmoteca</a>
+        <a class="navbar-brand" href="<?php echo base_url();?>">Filmoteca</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
