@@ -82,13 +82,13 @@
     echo anchor("login/cerrar_session","Cerrar sesion");
     echo"</button>
         </div>
-    <table id='tabla' class='display'>
+    <table id='tabla' class='table display'>
     <thead>
         <tr>
             <th>Usuario</th>
             <th>Contraseña</th>
-            <th>Modificar</th>
-            <th>Eliminar</th>
+            <th class='alignCelda'>Modificar</th>
+            <th class='alignCelda'>Eliminar</th>
         </tr>
         </thead>";
 
@@ -98,10 +98,10 @@
             echo "
                 <tr class='$user->id'>
                     <input type='hidden' name='id' value='$user->id'/>
-                    <td><input type='text' name='usuario' value='$user->usuario'/><p hidden>'$user->usuario'</p></td>
-                    <td><input type='text' id='$user->id-contra' name='contrasenya' value='$user->contrasenya'/><p hidden>'$user->contrasenya'</p></td>
-                    <td><button  class='btn btn-primary modificarusuario' value='$user->id' >Modificar</button></td>
-                    <td><button class='btn btn-danger eliminarusuario' value='$user->id'>Eliminar</td>  
+                    <td><input class='wInput' type='text' name='usuario' value='$user->usuario'/><p hidden>'$user->usuario'</p></td>
+                    <td><input class='wInput' type='text' id='$user->id-contra' name='contrasenya' value='$user->contrasenya'/><p hidden>'$user->contrasenya'</p></td>
+                    <td class='alignCelda'><button  class='btn btn-primary modificarusuario' value='$user->id' >Modificar</button></td>
+                    <td class='alignCelda'><button class='btn btn-danger eliminarusuario' value='$user->id'>Eliminar</td>  
                 </tr>
             ";
                

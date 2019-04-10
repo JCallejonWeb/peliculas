@@ -73,12 +73,12 @@
     echo anchor("login/cerrar_session","Cerrar sesion");
     echo"</button>
         </div>
-    <table id='tabla' class='display'>
+    <table id='tabla' class='table display'>
     <thead>
         <tr>
-            <th>Nombre</th>
-            <th>Modificar</th>
-            <th>Eliminar</th>
+            <th class=''>Nombre</th>
+            <th class='alignCelda'>Modificar</th>
+            <th class='alignCelda'>Eliminar</th>
         </tr>
         </thead>";
 
@@ -88,9 +88,9 @@
             echo "
                 <tr class='$gen->id'>
                     <input type='hidden' name='id' value='$gen->id'/>
-                    <td><input type='text' name='nombre' value='$gen->nombre'/><p hidden>'$gen->nombre'</p></td>
-                    <td><button  class='btn btn-primary modificargenero' value='$gen->id' >Modificar</button></td>
-                    <td><button class='btn btn-danger eliminargenero' value='$gen->id'>Eliminar</td>  
+                    <td ><input class='wInput' type='text' name='nombre' value='$gen->nombre'/><p hidden>'$gen->nombre'</p></td>
+                    <td class='alignCelda'><button  class='btn btn-primary modificargenero' value='$gen->id' >Modificar</button></td>
+                    <td class='alignCelda'><button class='btn btn-danger eliminargenero' value='$gen->id'>Eliminar</td>  
                 </tr>
             ";
                

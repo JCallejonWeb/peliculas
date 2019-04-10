@@ -74,12 +74,12 @@
     echo anchor("login/cerrar_session","Cerrar sesion");
     echo"</button>
         </div>
-    <table id='tabla' class='display'>
+    <table id='tabla' class='table display'>
     <thead>
         <tr>
             <th>Nombre</th>
-            <th>Modificar</th>
-            <th>Eliminar</th>
+            <th class='alignCelda'>Modificar</th>
+            <th class='alignCelda'>Eliminar</th>
         </tr>
         </thead>";
 
@@ -89,9 +89,9 @@
             echo "
                 <tr class='$dir->id'>
                     <input type='hidden' name='id' value='$dir->id'/>
-                    <td><input type='text' name='nombre' value='$dir->nombre'/><p hidden>'$dir->nombre'</p></td>
-                    <td><button  class='btn btn-primary modificardirector' value='$dir->id' >Modificar</button></td>
-                    <td><button class='btn btn-danger eliminardirector' value='$dir->id'>Eliminar</td>  
+                    <td><input class='wInput' type='text' name='nombre' value='$dir->nombre'/><p hidden>'$dir->nombre'</p></td>
+                    <td class='alignCelda'><button  class='btn btn-primary modificardirector' value='$dir->id' >Modificar</button></td>
+                    <td class='alignCelda'><button class='btn btn-danger eliminardirector' value='$dir->id'>Eliminar</td>  
                 </tr>
             ";
                

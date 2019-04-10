@@ -94,14 +94,14 @@
     <table id='tabla' class='table display'>
     <thead>
         <tr>
-            <th>Nombre</th>
-            <th>Año</th>
-            <th>Sinopsis</th>
-            <th>Director</th>
-            <th>Género</th>
-            <th>Cartel</th>
-            <th>Modificar</th>
-            <th>Eliminar</th>
+            <th >Nombre</th>
+            <th >Año</th>
+            <th >Sinopsis</th>
+            <th class='alignCelda'>Director</th>
+            <th class='alignCelda'>Género</th>
+            <th class='alignCelda'>Cartel</th>
+            <th class='alignCelda'>Modificar</th>
+            <th class='alignCelda'>Eliminar</th>
         </tr>
         </thead>";
 
@@ -111,10 +111,10 @@
             echo "
                 <tr class='$pel->id'>
                     <input type='hidden' name='id' value='$pel->id'/>
-                    <td><input type='text' name='nombre' value='$pel->nombre'/><p hidden>'$pel->nombre'</p></td>
-                    <td><input type='text' name='anyo' value='$pel->anyo'/><p hidden>'$pel->anyo'</p></td>
-                    <td><input type='text' name='sinopsis' value='$pel->sinopsis'/><p hidden>'$pel->sinopsis'</p></td>
-                    <td><select class='selectpicker'  data-live-search='true' id='$pel->id-pelDir'  multiple >";
+                    <td class='alignCelda'><input class='wInput' type='text' name='nombre' value='$pel->nombre'/><p hidden>'$pel->nombre'</p></td>
+                    <td class='alignCelda'><input class='wInput' type='text' name='anyo' value='$pel->anyo'/><p hidden>'$pel->anyo'</p></td>
+                    <td class='alignCelda'><input class='wInput' type='text' name='sinopsis' value='$pel->sinopsis'/><p hidden>'$pel->sinopsis'</p></td>
+                    <td class='alignCelda'><select class='selectpicker'  data-live-search='true' id='$pel->id-pelDir'  multiple >";
                     
                         for ($j = $cont=0; $j < count($dirList); $j++) {
                             
@@ -134,7 +134,7 @@
                         }
                   
                    echo   "</select></td>
-                    <td><select class='selectpicker'  data-live-search='true' id='$pel->id-pelGen'  multiple >";
+                    <td class='alignCelda'><select class='selectpicker'  data-live-search='true' id='$pel->id-pelGen'  multiple >";
 
                         for ($j = $cont=0; $j < count($genList); $j++) {
                             
@@ -154,9 +154,9 @@
                         }
                   
                    echo   "</select></td>
-                    <td>"; echo "<img id='$pel->id-img' class='cartelPelicula' src='".base_url($pel->cartel)."' width='100px'>";echo "</td>
-                    <td> <button  class='btn btn-primary modificarpelicula' value='$pel->id' >Modificar</button></td>
-                    <td> <button class='btn btn-danger eliminarpelicula' value='$pel->id'>Eliminar</td>  
+                    <td class='alignCelda'>"; echo "<img id='$pel->id-img' class='cartelPelicula' src='".base_url($pel->cartel)."' width='100px'>";echo "</td>
+                    <td class='alignCelda'> <button  class='btn btn-primary modificarpelicula' value='$pel->id' >Modificar</button></td>
+                    <td class='alignCelda'> <button class='btn btn-danger eliminarpelicula' value='$pel->id'>Eliminar</td>  
                 </tr>
                
                 ";
