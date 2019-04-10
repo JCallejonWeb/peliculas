@@ -27,9 +27,34 @@
         display: none;
     }
  }
+@media (max-width: 1423px){
+    body{
+        zoom: 80%;
+        max-zoom: 400% !important;
+      }
+}
+
+body{
+
+    max-zoom: 400% !important;
+  }
 
  @media (min-width:1000px) {
     #buscador2{
         display: none;
     }  
+ }
+ .tamañoTarjeta{
+    width: 300px;
+    height:500px;
+    margin: 0 auto !important;
+    margin-bottom: 15% !important;
+ }
+ #tituloBusqueda{
+    text-transform: capitalize;
+    margin-bottom:5%;
+    text-shadow: 3px 5px 10px rgb(67, 67, 219);
+ }
+ #tituloBusqueda::first-letter{
+     Color:rgb(67, 67, 219);
  }

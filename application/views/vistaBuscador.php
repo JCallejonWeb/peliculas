@@ -1,31 +1,41 @@
 
-    <div class='row'>
-        <div  class='col-md-11 col-sm-11 col-xs-11 offset-1'>
-        </div>
-    </div>
-   <?php
-    if (isset($tituloBusqueda)){ 
-      echo "<h2 id='lastBooks' class='display-4 text-center'>Busqueda: $tituloBusqueda </h2>";}
+   
+<?php
+
+      echo "<h2 id='tituloBusqueda' class='display-4 text-center'>$tituloBusqueda </h2>";
     
-      echo "<div class='row' >";
+    echo "<div class='container-fluid' >";
+    echo "<div class='row justify-content-center ' >";
+      
       for ($i = 0; $i < count($listaBusqueda); $i++) {
-          $bus = $listaBusqueda[$i];
-         
-          
-          echo"
-          <div class='col-md-3 col-sm-4 col-xs-12 margenTarjeta'>
-            <div class='card tamañoTarjeta'>
-              <a href='".site_url("Buscador/Visor/$bus->id/$bus->titulo")."'><img id='$bus->id' name='$ultimaPag' class='card-img-top imgTarjeta'  src='".base_url("assets/libros/".$bus->id."/0.jpg")."' ></a>
-					    <div class='card-body'>
-					      <h5 class='card-title tituloTarjeta text-center'>$bus->titulo</h5> 
-					      <a href='".site_url("Buscador/Visor/$bus->id")."'><h5 class='botonTarjeta text-center'>Ver libro</h5></a>
-              </div>
- 
-				    </div>
+        $bus = $listaBusqueda[$i];
+?>
+
+      <div class="col-lg-3 col-md-4 col-sm-12 col-12  text-center ">
+        <div class="card card-cascade tamañoTarjeta d-flex">
+
+          <div class="view view-cascade overlay">
+            <img  class=" card-img-top"<?php echo " src='".base_url("$bus->cartel")."'";?> alt="Card image cap">
+            <a href="#">
+              <div class="mask rgba-white-slight"></div>
+            </a>
           </div>
-          <div class='col-md-1 col-sm2 '></div>";
-          
-        }
-          echo "</div>
-          </div>";
-     
+
+          <div class="card-body card-body-cascade text-center">
+
+
+            <h5 class="blue-text pb-2"><strong><?php echo" $bus->nombre"; ?></strong></h5>
+
+            <p class="card-text"><?php echo " $bus->sinopsis"; ?></p>
+
+          </div>
+
+        </div>
+      </div>
+      <?php }?>
+     </div>
+    </div>
+
+   
+
+    

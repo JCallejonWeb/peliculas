@@ -7,9 +7,11 @@
             $this->load->model("peliculasModel");
             $this->load->model("directoresModel");
             $this->load->model("generosModel");
+            $this->load->model("buscadorModel");
         }
 
         public function index(){
+            $data["ultimasPeliculas"]=$this->buscadorModel->ultimasPeliculas();
             $data["nombreVista"]="frontPage";
             $this->load->view("plantillaFront",$data);
         }
