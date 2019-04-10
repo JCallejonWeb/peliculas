@@ -1,5 +1,16 @@
+<?php
 
-   
+?>
+<script>
+  $("document").ready(function(){
+    var now = new Date();
+    var aux2 = now.toISOString();
+    
+
+    $('#enlaceAMA').attr('href','http://webservices.amazon.com/onca/xml?Service=AWSECommerceService&Operation=ItemSearch&ResponseGroup=Small&SearchIndex=All&Keywords=harry_potter&AWSAccessKeyId=[AWSAccessKeyId=AKIAJT2NRP5VMGDZ2PZQ]&AssociateTag=[jcallejon-21]&Timestamp=['+aux2+']&Signature=[QYMMLK4JVXSPC6CJRGQJGOSKCWDS66DD]');
+  });
+</script>
+   <!--<a id='enlaceAMA' href='#'>aaaaaaaaaaaaaaaa</a>-->
 <?php
 
     echo "<h2 id='tituloBusqueda' class='display-4 text-center'>$tituloBusqueda </h2>";
@@ -28,11 +39,9 @@
 
                 <h5 class="blue-text pb-2"><strong><?php echo" $bus->nombre"; ?></strong></h5>
 
-                <button type="button" class="popSinopsis btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="<?php echo"$bus->sinopsis";?>">
+                <button type="button" class="popSinopsis btn" data-trigger='hover' data-container="body" data-toggle="popover" data-placement="top" data-content="<?php echo"$bus->sinopsis";?>">
                   +Info
                 </button>
-
-                <!--<p class="card-text"><?php// echo " $bus->sinopsis"; ?></p>-->
 
               </div>
 
