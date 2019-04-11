@@ -50,6 +50,11 @@
      height: 450px !important;
 
  }
+
+ .tamañoImagenSpin{
+     width: 225px !important;
+     height:350px !important;
+ }
  #tituloBusqueda{
     text-transform: capitalize;
     margin-bottom:5%;
@@ -64,6 +69,16 @@
  .popSinopsis{
      background: #035FA2 !important;
      color: white !important;
+ }
+
+ .centrar{
+     margin: 0 auto !important;
+ }
+ .textoSpin{
+     margin-bottom: 2.5%;
+ }
+ .botonSpin{
+     margin-top: 2%;
  }
  body{
     background: rgb(3,95,162);

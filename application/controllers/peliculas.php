@@ -116,4 +116,15 @@
                     }
                 }
             }
+
+            public function filmSpin(){
+
+                    $data["pelList"] = $this->peliculasModel->getAll();
+
+                    $data["nombreVista"]="filmSpin";
+                    $this->load->view("plantillaFront",$data);
+                
+            }
+
+
     }

@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <link rel="stylesheet" href="http://localhost/peliculas/css/estiloFront.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
     <link rel="stylesheet" href="http://localhost/peliculas/css/mdb.min.css">
-
-
+  
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="crossorigin="anonymous"></script>
     <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>js/roulette.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>js/frontJs.js"></script>
+
     <title>front</title>
+    
 </head>
 <body>
     <nav id="barraNav" class="navbar navbar-expand-md bg-dark navbar-dark">
@@ -29,7 +34,7 @@
                     <a class="nav-link" href="#">Géneros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">FilmSpin</a>
+                    <a class="nav-link" href="<?php echo base_url(); ?>index.php/peliculas/filmSpin">FilmSpin</a>
                 </li>
             </ul>
         </div> 
