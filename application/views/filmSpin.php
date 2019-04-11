@@ -1,6 +1,15 @@
 <script>
     $(document).ready(function(){
 
+        function habilitar(){
+            $('#desBoton').removeAttr('disabled');
+        }
+
+        $('#desBoton').click(function(){
+            $('#desBoton').attr('disabled','true');
+            setTimeout(habilitar,10800);
+        });
+
         var option = {
 	        speed : 30,
 	        duration : 2,
@@ -22,21 +31,11 @@
 	        var p = {
 		        startCallback : function() {
 			        appendLogMsg('start');
-			        $('#speed, #duration').slider('disable');
-			        $('#stopImageNumber').spinner('disable');
-			        $('.start').attr('disabled', 'true');
-			        $('.stop').removeAttr('disabled');
-		        },
-		        slowDownCallback : function() {
-			        appendLogMsg('slowdown');
-			        $('.stop').attr('disabled', 'true');
+
 		        },
 		        stopCallback : function($stopElm) {
 			        appendLogMsg('stop');
-			        $('#speed, #duration').slider('enable');
-			        $('#stopImageNumber').spinner('enable');
-			        $('.start').removeAttr('disabled');
-			        $('.stop').attr('disabled', 'true');
+		
 		        }
 
 	        }
@@ -77,7 +76,7 @@
 
     <div class="btn_container">
         <p class='botonSpin text-center'>
-            <button class="btn btn-large btn-primary start"> Spin !! </button>
+            <button id='desBoton' class="btn btn-large btn-primary start"> Spin !! </button>
             <button hidden class="stop btn-large btn btn-warning"></button>
         </p>
     </div>      
