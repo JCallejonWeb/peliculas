@@ -15,7 +15,24 @@
             $this->load->view("plantillaFront", $data);
 
         }
-       
-        
+
+        public function listaGeneros() {
+
+            $data["totalGeneros"]=$this->buscadorModel->totalGeneros();
+
+            $data["nombreVista"] = "listaGeneros";
+
+            $this->load->view("plantillaFront", $data);
+
+        }
+
+        public function buscadorGenero($id) {
+            
+            $data["totalGeneros"]=$this->BuscadorModel->consultaGeneros($id);
+            $data["listaBusqueda"]=$this->BuscadorModel->peliculasGenero($id);
+
+            $data["nombreVista"] = "vistaBuscador";
+
+          $this->load->view("plantillaFront", $data);
+        }
     }
-    

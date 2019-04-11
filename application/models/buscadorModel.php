@@ -30,4 +30,33 @@
             
         }
 
+
+        public function totalGeneros() {
+           
+            $r = $this->db->query("SELECT nombre ,id FROM genero"); 
+            
+            $genero = array();
+
+           foreach ($r -> result()as $gen) {
+
+            $genero[]=$gen;
+          
+           }
+            
+            return $genero;
+
+        }
+
+        public function consultaGeneros($id){
+            
+            $r = $this->db->query("SELECT nombre FROM genero where id='$id'"); 
+            
+            $generos = array();
+            foreach ($r -> result()as $gen) {
+            $generos[]=$gen;
+          
+           }
+            return $generos;
+        }
+
     }
