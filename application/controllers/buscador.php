@@ -35,4 +35,14 @@
 
           $this->load->view("plantillaFront", $data);
         }
+
+
+        public function consultaGeneros($valor){
+            $data["listaBusqueda"]=$this->buscadorModel->consultaGeneros($valor);
+            $data["tituloBusqueda"] = $valor;
+            $data["nombreVista"] = "vistaBuscador";
+
+            $this->load->view("plantillaFront", $data);
+        }
+
     }

@@ -47,9 +47,9 @@
 
         }
 
-        public function consultaGeneros($id){
+        public function consultaGeneros($valor){
             
-            $r = $this->db->query("SELECT nombre FROM genero where id='$id'"); 
+            $r = $this->db->query("SELECT peliculas.id , peliculas.nombre, peliculas.cartel, peliculas.sinopsis FROM peliculas, peliculasgeneros, genero WHERE peliculas.id = peliculasgeneros.idPelicula AND peliculasgeneros.idGenero = genero.id AND genero.nombre = '$valor'"); 
             
             $generos = array();
             foreach ($r -> result()as $gen) {
