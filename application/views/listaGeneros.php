@@ -20,7 +20,7 @@
             $n=1;
         }
 ?>  
-    <div class='estiloGeneros <?php echo "genero$n"; ?> hvr-rectangle-out col-lg-3 col-md-6 col-xs-12'><a href='<?php echo base_url(); ?>index.php/Buscador/consultaGeneros/<?php echo "$gen->nombre"; ?>'><h2 class='textoGenero text-center'> <?php echo "$gen->nombre" ?>  </h2></a></div>  
+    <div class='estiloGeneros <?php echo "genero$n"; ?> hvr-rectangle-out col-lg-3 col-md-6 col-xs-12'><a class='enlaceGeneros' href='<?php echo base_url(); ?>index.php/Buscador/consultaGeneros/<?php echo "$gen->id"; ?>'><h2 class='textoGenero text-center'> <?php echo "$gen->nombre" ?>  </h2></a></div>  
 
 <?php
         $n = $n+1 ;

@@ -39,8 +39,8 @@
 
         public function consultaGeneros($valor){
             $data["listaBusqueda"]=$this->buscadorModel->consultaGeneros($valor);
-            $data["tituloBusqueda"] = $valor;
-            $data["nombreVista"] = "vistaBuscador";
+            $data["tituloBusqueda"] = 'Géneros';
+            $data["nombreVista"] = "vistaGenero";
 
             $this->load->view("plantillaFront", $data);
         }
