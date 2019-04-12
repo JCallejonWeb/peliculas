@@ -1,12 +1,7 @@
-<script>
 
-    $(".estiloGeneros").click(function(){
-        location.href("<?php echo base_url(); ?>index.php/Buscador/buscador");
-    });
-
-</script>
 <div class='row justify-content-center align-items-center'>
-
+<div class=col-12>
+<h2 id='tituloBusqueda' class='display-4 text-center'>Géneros </h2></div>";
 <?php 
 
 
