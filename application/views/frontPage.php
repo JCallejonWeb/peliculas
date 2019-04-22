@@ -22,9 +22,11 @@
 
             <h5 class="blue-text pb-2"><strong><?php echo" $pelicula->nombre"; ?></strong></h5>
 
-            <button type="button" class="popSinopsis btn " data-trigger='hover' data-container="body" data-toggle="popover" data-placement="top" data-content="<?php echo"$pelicula->sinopsis";?>">
+            <button type="button" class="popSinopsis btn " data-trigger='hover' data-container="body" data-toggle="popover" data-placement="right" data-content="<?php echo"$pelicula->sinopsis";?>">
               +Info
             </button>
+
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button twBoton" data-size="small" data-text="He visto <?php echo"$pelicula->nombre"; ?> en la filmoteca y me ha encantando!" data-url="http://www.filmoteca.es" data-via="proyectoFilmoteca" data-lang="es" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
           </div>
 

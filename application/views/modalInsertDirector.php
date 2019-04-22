@@ -6,7 +6,7 @@ echo "
         <div class='modal-content'>
 
             <div class='modal-header'>
-                <h4 class='modal-title'>Insercion de directores</h4>
+                <h4 class='modal-title'>Inserción de directores</h4>
                 <button type='button' class='close' data-dismiss='modal'>&times;</button>
             </div>
 
@@ -16,11 +16,11 @@ echo "
                 echo "
                     <div class='form-group'>
                         <label for='nombre'>Nombre</label>
-                        <input type='text' class='form-control bordeInputs' name='nombre' id='nombre'  placeholder='Nombre'>
+                        <input required type='text' class='form-control bordeInputs' name='nombre' id='nombre'  placeholder='Nombre'>
                     </div>  
                     ";  
 
-                echo "<button class='btn btn-primary mainColor bordeBotones'  type='submit' name='Enviar' />Insertar</button>
+                echo "<button id='btnInsertar' class='btn btn-primary mainColor bordeBotones'  type='submit' name='Enviar' />Insertar</button>
                 </form>
                 ";  
                 echo "

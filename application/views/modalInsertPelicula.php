@@ -6,7 +6,7 @@ echo "
         <div class='modal-content'>
 
             <div class='modal-header'>
-                <h4 class='modal-title'>Insercion de películas</h4>
+                <h4 class='modal-title'>Inserción de películas</h4>
                 <button type='button' class='close' data-dismiss='modal'>&times;</button>
             </div>
 
@@ -16,7 +16,7 @@ echo "
                 echo "
                     <div class='form-group'>
                         <label for='nombre'>Nombre</label>
-                        <input type='text' class='form-control bordeInputs' name='nombre' id='nombre'  placeholder='Nombre'>
+                        <input required id='nombre' type='text' class='form-control bordeInputs' name='nombre'  placeholder='Nombre'>
                     </div>
                     <div class='form-group'>
                         <label for='anyo'>Año</label>
@@ -24,12 +24,12 @@ echo "
                     </div>
                     <div class='form-group'>
                         <label for='sinopsis'>Sinopsis</label>
-                        <input type='text' class='form-control bordeInputs' name='sinopsis' id='sinopsis'  placeholder='Sinopsis'>
+                        <input required type='text' class='form-control bordeInputs' name='sinopsis' id='sinopsis'  placeholder='Sinopsis'>
                     </div>
                     <div class='form-group'>
                         <label for='director'>Director</label>
                         <br>
-                        <select class='selectpicker' data-style='btn-info'  data-live-search='true' multiple name='idDirector[]' id='director'>";
+                        <select required class='selectpicker' data-style='btn-info'  data-live-search='true' multiple name='idDirector[]' id='director'>";
                         
                         for ($j = 0; $j < count($dirList); $j++) {
                             $dir = $dirList[$j];
@@ -43,7 +43,7 @@ echo "
                     <div class='form-group'>
                         <label for='genero'>Género</label>
                         <br>
-                        <select class='selectpicker' data-style='btn-info'  data-live-search='true' multiple name='idGenero[]' id='genero'>";
+                        <select required class='selectpicker' data-style='btn-info'  data-live-search='true' multiple name='idGenero[]' id='genero'>";
                         
                         for ($j = 0; $j < count($genList); $j++) {
                             $gen = $genList[$j];
@@ -61,7 +61,8 @@ echo "
                         
                     ";  
 
-                echo "<button class='btn btn-primary mainColor bordeBotones'  type='submit' name='Enviar' />Insertar</button>
+                echo "
+                <button id='btnInsertar' disabled class='btn btn-primary mainColor bordeBotones'  type='submit' name='Enviar' />Insertar</button>
                 </form>
                 ";  
                 echo "

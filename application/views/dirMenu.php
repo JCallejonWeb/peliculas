@@ -37,6 +37,30 @@
 
         });
 
+
+        $("#nombre").on('keyup',function(){
+            valorInput = $("#nombre").val();
+            datos = "nombre="+valorInput;
+            $.ajax({
+                url:"<?php echo site_url("controlFormularios/ComprobarDirector/"); ?>", 
+                method:"POST",
+                data:datos,
+                success:function(data){
+                    if (data==1){
+
+                        $("#nombre").css("border", "2px solid red");
+                        $("#btnInsertar").attr('disabled',true);
+           
+                    } else {
+
+                        $("#nombre").css("border", "2px solid green");
+                        $("#btnInsertar").removeAttr('disabled');
+               
+                    }
+                }
+            });
+      });
+
         $("#menuPeliculas").click(function(){
             location.href='<?php echo base_url("index.php/peliculas/homeFilms"); ?>'
         });
@@ -71,7 +95,7 @@
         </button>";
     echo "
         <button type='button' class='btn btn-danger' id='cerrarsesion'>";
-    echo anchor("login/cerrar_session","Cerrar sesion");
+    echo anchor("login/cerrar_session","Cerrar sesión");
     echo"</button>
         </div>
     <table id='tabla' class='table display'>

@@ -19,6 +19,9 @@ class Seguridad extends CI_Controller{
     public function cerrar_session(){
         $this->load->library("session");
         $this->session->sess_destroy();
-        $this->load->view("formLoginAj");
+        $this->load->model("buscadorModel");
+        $data["ultimasPeliculas"]=$this->buscadorModel->ultimasPeliculas();
+        $data ["nombreVista"]= 'frontPage';
+        $this->load->view("plantillaFront",$data);
     }
 }

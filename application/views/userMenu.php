@@ -45,6 +45,29 @@
 
         });
 
+        $("#usuario").on('keyup',function(){
+            valorInput = $("#usuario").val();
+            datos = "usuario="+valorInput;
+            $.ajax({
+                url:"<?php echo site_url("controlFormularios/ComprobarUsuario/"); ?>", 
+                method:"POST",
+                data:datos,
+                success:function(data){
+                    if (data==1){
+
+                        $("#usuario").css("border", "2px solid red");
+                        $("#btnInsertar").attr('disabled',true);
+           
+                    } else {
+
+                        $("#usuario").css("border", "2px solid green");
+                        $("#btnInsertar").removeAttr('disabled');
+               
+                    }
+                }
+            });
+      });
+
         $("#menuPeliculas").click(function(){
             location.href='<?php echo base_url("index.php/peliculas/homeFilms"); ?>'
         });
@@ -79,7 +102,7 @@
         </button>";
     echo "
         <button type='button' class='btn btn-danger' id='cerrarsesion'>";
-    echo anchor("login/cerrar_session","Cerrar sesion");
+    echo anchor("login/cerrar_session","Cerrar sesión");
     echo"</button>
         </div>
     <table id='tabla' class='table display'>

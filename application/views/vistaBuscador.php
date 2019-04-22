@@ -16,6 +16,7 @@
             <div class="card card-cascade tamañoTarjeta d-flex">
 
               <div class="view view-cascade overlay">
+              
                 <img  class="tamañoImagen card-img-top"<?php echo " src='".base_url("$bus->cartel")."'";?> alt="Card image cap">
                 <a href="#">
                   <div class="mask rgba-white-slight"></div>
@@ -26,14 +27,13 @@
 
                 <h5 class="blue-text pb-2"><strong><?php echo" $bus->nombre"; ?></strong></h5>
 
-                <button type="button" class="popSinopsis btn" data-trigger='hover' data-container="body" data-toggle="popover" data-placement="top" data-content="<?php echo"$bus->sinopsis";?>">
+                <button type="button" class="popSinopsis btn" data-trigger='hover' data-container="body" data-toggle="popover" data-placement="right" data-content="<?php echo"$bus->sinopsis";?>">
                   +Info
                 </button>
 
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button twBoton" data-size="small" data-text="He visto <?php echo"$bus->nombre"; ?> en la filmoteca y me ha encantando!" data-url="http://www.filmoteca.es" data-via="proyectoFilmoteca" data-lang="es" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
               </div>
-
-
-            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button twBoton" data-size="large" data-text="He visto <?php echo" $bus->nombre"; ?> en la filmoteca y me ha encantando!" data-url="http://www.filmoteca.es" data-via="proyectoFilmoteca" data-lang="es" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
             </div>
           </div>

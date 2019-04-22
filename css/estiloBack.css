@@ -1,22 +1,19 @@
 .mainColor{ 
-    background: rgba(228, 12, 12, 0.815) !important;
+    background: rgba(12, 228, 120, 0.815) !important;
 }
 .bordeBotones{
     border-color: rgb(22, 22, 22) !important;
     color:rgb(27, 27, 27) !important;
 }
 .bordeBotones:hover{
-    background: rgba(107, 7, 7, 0.815) !important;
+    background: rgba(12, 228, 120) !important;
     color:rgb(129, 125, 125) !important;
 }
 .bordeInputs:focus{
-    box-shadow:0 0 0 0.5px rgba(228, 12, 12, 0.815) !important;
-    border-color: rgba(228, 12, 12, 0.815) !important;
+    box-shadow:0 0 0 0.5px rgba(12, 80, 228, 0.815) !important;
 }
 .botonesPrincipales{
     margin-bottom: 5%;
- 
-    
 }
 #cerrarsesion{
     margin-right: 10% !important;
@@ -42,7 +39,7 @@
 
 #piePagina{
     margin-top: 5%;
-    background: rgba(228, 12, 12, 0.815) !important;
+    background: rgba(12, 228, 120, 0.815) !important;
 }
 
 #textoPie > a{

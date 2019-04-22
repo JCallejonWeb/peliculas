@@ -76,7 +76,7 @@
 
     <div class="btn_container">
         <p class='botonSpin text-center'>
-            <button id='desBoton' class="btn btn-large btn-primary start"> Spin !! </button>
+            <button id='desBoton' class="btn btn-large btn-primary start"> Suerte ! </button>
             <button hidden class="stop btn-large btn btn-warning"></button>
         </p>
     </div>      

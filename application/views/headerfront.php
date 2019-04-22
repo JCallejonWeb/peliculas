@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="<?php echo base_url();?>imgs/claqueta.png" />
 
     <link rel="stylesheet" href="<?php echo base_url();?>css/stiloFront.css">
     <link rel="stylesheet" href="<?php echo base_url();?>css/hover.css">
@@ -49,7 +50,7 @@
     </form>
     
     <div >
-        <?php echo"<img id='fotoCabecera' src='".base_url("imgs/cabe.jpg")."'>";  ?>
+        <?php echo"<img id='fotoCabecera' src='".base_url("imgs/cabe.png")."'>";  ?>
     </div>
 
     <div id='contenido' class="container-fluid">

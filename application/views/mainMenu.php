@@ -50,6 +50,28 @@
 
         });
 
+        $("#nombre").on('keyup',function(){
+            valorTitulo = $("#nombre").val();
+            datos = "nombre="+valorTitulo;
+            $.ajax({
+                url:"<?php echo site_url("controlFormularios/ComprobarTitulo/"); ?>", 
+                method:"POST",
+                data:datos,
+                success:function(data){
+                    if (data==1){
+
+                        $("#nombre").css("border", "2px solid red");
+                        $("#btnInsertar").attr('disabled',true);
+           
+                    } else {
+
+                        $("#nombre").css("border", "2px solid green");
+                        $("#btnInsertar").removeAttr('disabled');
+               
+                    }
+                }
+            });
+      });
          
         $("#menuPeliculas").click(function(){
             location.href='<?php echo base_url("index.php/peliculas/homeFilms"); ?>'
@@ -87,7 +109,7 @@
     ";
     echo "
         <button type='button' class='btn btn-danger' id='cerrarsesion'>";
-            echo anchor("login/cerrar_session","Cerrar sesion");
+            echo anchor("login/cerrar_session","Cerrar sesión");
     echo"</button>
    
         </div>
