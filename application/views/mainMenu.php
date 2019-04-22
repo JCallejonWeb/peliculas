@@ -26,15 +26,16 @@
             var nombre = $("." + id + " input[name='nombre']").val();
             var anyo = $("." + id + " input[name='anyo']").val();
             var sinopsis = $("." + id + " input[name='sinopsis']").val();
+            var trailer = $("." + id + " input[name='trailer']").val();
             var idDirector = $("#" + id + "-pelDir").val();
             var idGenero = $("#" + id + "-pelGen").val();
-
 
             var datosJson = {
                 'id': id,
                 'nombre': nombre,
                 'anyo': anyo,
                 'sinopsis': sinopsis,
+                'trailer': trailer,
                 'idGenero': idGenero,
                 'idDirector': idDirector
             };
@@ -119,6 +120,7 @@
             <th >Nombre</th>
             <th >Año</th>
             <th >Sinopsis</th>
+            <th class='alignCelda'>Trailer</th>
             <th class='alignCelda'>Director</th>
             <th class='alignCelda'>Género</th>
             <th class='alignCelda'>Cartel</th>
@@ -136,6 +138,7 @@
                     <td class='alignCelda'><input class='wInput' type='text' name='nombre' value='$pel->nombre'/><p hidden>'$pel->nombre'</p></td>
                     <td class='alignCelda'><input class='wInput' type='text' name='anyo' value='$pel->anyo'/><p hidden>'$pel->anyo'</p></td>
                     <td class='alignCelda'><input class='wInput' type='text' name='sinopsis' value='$pel->sinopsis'/><p hidden>'$pel->sinopsis'</p></td>
+                    <td class='alignCelda'> <input class='wInput' type='text' name='trailer' value='$pel->trailer'/></td>
                     <td class='alignCelda'><select class='selectpicker'  data-live-search='true' id='$pel->id-pelDir'  multiple >";
                     
                         for ($j = $cont=0; $j < count($dirList); $j++) {
@@ -176,6 +179,7 @@
                         }
                   
                    echo   "</select></td>
+ 
                     <td class='alignCelda'>"; echo "<img id='$pel->id-img' class='cartelPelicula' src='".base_url($pel->cartel)."' width='100px'>";echo "</td>
                     <td class='alignCelda'> <button  class='btn btn-primary modificarpelicula' value='$pel->id' >Modificar</button></td>
                     <td class='alignCelda'> <button class='btn btn-danger eliminarpelicula' value='$pel->id'>Eliminar</td>  

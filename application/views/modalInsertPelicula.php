@@ -55,6 +55,10 @@ echo "
                     echo "</select>
                     </div>
                     <div class='form-group'>
+                        <label for='trailer'>Trailer</label>
+                        <input type='text' class='form-control bordeInputs' name='trailer' id='trailer'  placeholder='Trailer'>
+                    </div>
+                    <div class='form-group'>
                         <label for='Cartel'>Cartel</label>
                         <input required type='file' class='form-control bordeInputs' name='cartel' id='cartel'  placeholder='Cartel'>
                     </div>

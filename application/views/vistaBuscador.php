@@ -18,7 +18,7 @@
               <div class="view view-cascade overlay">
               
                 <img  class="tamañoImagen card-img-top"<?php echo " src='".base_url("$bus->cartel")."'";?> alt="Card image cap">
-                <a href="#">
+                <a href='<?php echo"$bus->trailer"?>'>
                   <div class="mask rgba-white-slight"></div>
                 </a>
               </div>

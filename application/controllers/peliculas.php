@@ -36,7 +36,7 @@
                 $nombre = $this->input->get_post("nombre");
                 $anyo = $this->input->get_post("anyo");
                 $sinopsis = $this->input->get_post("sinopsis");
-                $sinopsis = $this->input->post('sinopsis');
+                $trailer = $this->input->post('trailer');
                 $idGenero = $this->input->post('idGenero');
                 $idDirector = $this->input->post('idDirector');
 
@@ -46,7 +46,7 @@
 
                     $cartel = "./imgs/films/".$img_name;
 
-                    $resultado = $this->peliculasModel->insertPelicula($nombre,$anyo,$sinopsis,$cartel);
+                    $resultado = $this->peliculasModel->insertPelicula($nombre,$anyo,$sinopsis, $trailer,$cartel);
                     $id=$this->peliculasModel->getMax();
                     for ($i = $cont=0; $i < count($idDirector); $i++) {
                         $dir = $idDirector[$i];
@@ -90,10 +90,11 @@
                     $nombre = $this->input->post('nombre');
                     $anyo = $this->input->post('anyo');
                     $sinopsis = $this->input->post('sinopsis');
+                    $trailer = $this->input->post('trailer');
                     $idGenero = $this->input->post('idGenero');
                     $idDirector = $this->input->post('idDirector');
 
-                    $resultado = $this->peliculasModel->modificarPelicula($id, $nombre, $anyo, $sinopsis);
+                    $resultado = $this->peliculasModel->modificarPelicula($id, $nombre, $anyo, $sinopsis, $trailer);
 
                     $r1=$this->peliculasModel->eliminarPeliculaDirector($id);
                     $r2=$this->peliculasModel->eliminarPeliculaGenero($id);

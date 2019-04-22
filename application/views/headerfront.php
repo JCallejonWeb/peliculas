@@ -19,7 +19,7 @@
     <script type="text/javascript" src="<?php echo base_url();?>js/roulette.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>js/frontJs.js"></script>
 
-    <title>front</title>
+    <title>Filmoteca</title>
     
 </head>
 <body>

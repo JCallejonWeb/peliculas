@@ -1,16 +1,16 @@
 <?php
     class peliculasModel extends CI_Model {
         public function getAll() {
-            $r = $this->db->query("SELECT id, nombre, anyo, sinopsis, cartel FROM peliculas");
+            $r = $this->db->query("SELECT id, nombre, anyo, sinopsis, trailer, cartel FROM peliculas");
             $peliculas=array();
             foreach($r->result()as $pel){
                 $peliculas[]=$pel;
             }
             return $peliculas;     
         }
-        public function insertPelicula($nombre, $anyo, $sinopsis, $cartel) {
-            $this->db->query("Insert into peliculas(nombre, anyo, sinopsis, cartel)
-            Values('$nombre', '$anyo', '$sinopsis', '$cartel')");
+        public function insertPelicula($nombre, $anyo, $sinopsis, $trailer, $cartel) {
+            $this->db->query("Insert into peliculas(nombre, anyo, sinopsis, trailer, cartel)
+            Values('$nombre', '$anyo', '$sinopsis', '$trailer', '$cartel')");
             return $this->db->affected_rows();
             
         }
@@ -19,9 +19,9 @@
             return $this->db->affected_rows();
         }
 
-        public function modificarPelicula($id, $nombre, $anyo, $sinopsis){
+        public function modificarPelicula($id, $nombre, $anyo, $sinopsis, $trailer){
                 
-            $this->db->query("UPDATE peliculas Set nombre ='$nombre', anyo = '$anyo', sinopsis ='$sinopsis' Where id='$id'");
+            $this->db->query("UPDATE peliculas Set nombre ='$nombre', anyo = '$anyo', sinopsis ='$sinopsis', trailer='$trailer' Where id='$id'");
                 
             return $this->db->affected_rows();
         }
