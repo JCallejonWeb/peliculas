@@ -97,31 +97,31 @@
       
  }
  .genero1{
-    background-color: rgb(91, 91, 184);
+    background-color: rgb(91, 91, 184) !important;
  }
  .genero2{
-    background-color: rgb(91, 184, 107);
+    background-color: rgb(91, 184, 107) !important;
  }
  .genero3{
-    background-color: rgb(184, 91, 135);    
+    background-color: rgb(184, 91, 135) !important;    
 }
 .genero4{
-    background-color: rgb(173, 91, 184);
+    background-color: rgb(173, 91, 184) !important;
 }
 .genero5{
-    background-color: rgb(170, 184, 91);
+    background-color: rgb(170, 184, 91) !important;
 }
 .genero6{
-    background-color: rgb(184, 94, 91);
+    background-color: rgb(184, 94, 91) !important;
 }
 .genero7{
-    background-color: rgb(91, 93, 184);
+    background-color: rgb(91, 93, 184) !important;
 }
 .genero8{
-    background-color: rgb(175, 184, 91);
+    background-color: rgb(175, 184, 91) !important;
 }
 .genero9{
-    background-color: rgb(184, 91, 114);
+    background-color: rgb(184, 91, 114) !important;
 }
 
  .textoGenero{
@@ -129,6 +129,7 @@
  }
 .enlaceGeneros{
     color: white !important;
+    text-decoration: none !important;
 }
 .twBoton{
    

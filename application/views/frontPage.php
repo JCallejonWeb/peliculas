@@ -22,7 +22,7 @@
 
             <h5 class="blue-text pb-2"><strong><?php echo" $pelicula->nombre"; ?></strong></h5>
 
-            <button type="button" class="popSinopsis btn " data-trigger='hover' data-container="body" data-toggle="popover" data-placement="right" data-content="<?php echo"$pelicula->sinopsis";?>">
+            <button type="button" class="popSinopsis btn " data-trigger='hover' data-container="body" data-toggle="popover" data-placement="top" data-content="<?php echo"$pelicula->sinopsis";?>">
               +Info
             </button>
 

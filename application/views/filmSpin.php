@@ -63,7 +63,7 @@
 
 ?>
 
-        <img class='tamañoImagenSpin rounded mx-auto d-block' <?php echo " src='".base_url("$pelicula->cartel")."'";?> >
+    <img class='tamañoImagenSpin rounded mx-auto d-block' <?php echo " src='".base_url("$pelicula->cartel")."'";?> >
            
 <?php
     

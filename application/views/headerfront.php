@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="<?php echo base_url();?>imgs/claqueta.png" />
 
-    <link rel="stylesheet" href="<?php echo base_url();?>css/stiloFront.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>css/estiloFront.css">
     <link rel="stylesheet" href="<?php echo base_url();?>css/hover.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
-    <link rel="stylesheet" href="http://localhost/peliculas/css/mdb.min.css">
-    <link rel="stylesheet" href="http://localhost/peliculas/css/estiloFront.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>css/mdb.min.css">
+
   
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="crossorigin="anonymous"></script>
     <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>

@@ -26,7 +26,7 @@
 
                 <h5 class="blue-text pb-2"><strong><?php echo"$bus->nombre"; ?></strong></h5>
 
-                <button type="button" class="popSinopsis btn" data-trigger='hover' data-container="body" data-toggle="popover" data-placement="right" data-content="<?php echo"$bus->sinopsis";?>">
+                <button type="button" class="popSinopsis btn" data-trigger='hover' data-container="body" data-toggle="popover" data-placement="top" data-content="<?php echo"$bus->sinopsis";?>">
                   +Info
                 </button>
 
