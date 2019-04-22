@@ -12,7 +12,7 @@
 
           <div class="view view-cascade overlay">
             <img  class="tamañoImagen card-img-top"<?php echo " src='".base_url("$pelicula->cartel")."'";?> alt="Card image cap">
-            <a href='<?php echo"$pelicula->trailer"?>'>
+            <a href='<?php echo"$pelicula->trailer"?>'  target='_blank'>
               <div class="mask rgba-white-slight"></div>
             </a>
           </div>
